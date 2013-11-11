@@ -38,14 +38,14 @@
 					
 					do {
 						console.log(i);
-						target.addEventListener(eventList[i], callback);
+						target.addEventListener(eventList[i].substring(2), callback);
 					}
 					while (--i >=0);
 				}
 				console.log('Event Listeners added');
 			},
-			logType: function () {
-				console.log('event.type');
+			logType: function (event) {
+				console.log(event.type);
 			}
 		}
 	myApp.init();
