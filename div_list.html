@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id='element'>
+		<ul id='list'>
+		</ul>
+	</div>
+	<script>
+		var element = document.getElementById('element'),
+			i = '', 
+			out = [];
+		for (i in element) {
+		  out[out.length] = i;
+		}
+		document.getElementById('list').innerHTML = '<li>' + out.join('</li><li>') + '</li>';
+	</script>
+</body>
+</html>
