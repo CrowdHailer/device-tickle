@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	#testbed {
+		width: 100%;
+		height: 200px;
+		background: red;
+	}
+	</style>
+</head>
+<body>
+	<div id='testbed'>
+		
+	</div>
+	<script>
+		var myApp = {
+			init: function () {
+				this.getSupportedOccurances(window);
+				var testbed = document.getElementById('testbed');
+				this.setEventListeners(testbed, this.occurances, this.logType);
+			},
+			occurances: [],
+			
+			getSupportedOccurances: function (target) {
+				var i = '', occurances = this.occurances;
+				for (i in target) {
+					if ( /^on/.test(i)) { occurances[occurances.length] = i; }
+				}
+				console.log(occurances);
+			},
+			setEventListeners: function(target, eventList, callback) {
+				var i = eventList.length-1;
+				if (i > -1) {
+					console.log('adding');
+					
+					do {
+						console.log(i);
+						target.addEventListener(eventList[i], callback);
+					}
+					while (--i >=0);
+				}
+				console.log('Event Listeners added');
+			},
+			logType: function () {
+				console.log('event.type');
+			}
+		}
+	myApp.init();
+	</script>
+</body>
+</html>
