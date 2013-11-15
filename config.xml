@@ -19,6 +19,6 @@
 	
 	<icon src="icon.png" />
 	
-	<access origin="https://londonlayout.co.uk" subdomains="true" />
+	<preference name="permissions" value="none"/>
 
 </widget>
