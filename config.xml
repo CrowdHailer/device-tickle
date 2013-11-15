@@ -7,10 +7,10 @@
 
     <!-- versionCode is optional and Android only -->
 
-    <name>London Layout Live Status</name>
+    <name>Device Tickle</name>
 
     <description>
-        App to deliver live operating data on Transport for London Lines and Stations 
+        App to show all the events fired on an active page. 
     </description>
 
     <author href="https://londonlayout.co.uk" email="petersaxton@londonlayout.co.uk">
