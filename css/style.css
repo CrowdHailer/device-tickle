@@ -1,9 +1,15 @@
 #startPage{
-	background: red;
+	background: #EEE;
 }
 #activePage{
-	background: blue;
+	background: #CCC;
 }
 #resultsPage{
-	background: green;
+	background: #BBB;
 }
+.page {
+	text-align: center;
+}
+img {
+	width: 25%;
+	max-width: 80px;
