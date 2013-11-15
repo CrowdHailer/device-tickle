@@ -3,8 +3,12 @@ var myApp = {
 		myApp.goButton.addEventListener("click", function(evt) {
 			myApp.slidePageFrom(activePage, "right");
 			window.setTimeout(function () {
+				myApp.resultsList.innerHTML = myApp.eventList;
 				myApp.slidePageFrom(resultsPage, "right");
 			}, 2000);
+		});
+		myApp.activePage.addEventListener("transitionend", function(evt) {
+			myApp.eventList = "";
 		});
 		myApp.homeButton.addEventListener("click", function(evt) {
 			myApp.slidePageFrom(startPage, "right");
@@ -18,6 +22,7 @@ var myApp = {
     currentPage: startPage,
 	goButton: document.getElementById("go-button"),
 	homeButton: document.getElementById("home-button"),
+	resultsList: document.getElementById("resultsList"),
 	occurances: [],
 	getSupportedOccurances: function (target) {
 		var i = '', occurances = this.occurances;
@@ -39,10 +44,11 @@ var myApp = {
 		}
 		console.log('Event Listeners added');
 	},
+	eventList: "",
 	logType: function (event) {
 		var type = event.type;
 		console.log(type);
-		return "<li>" + type "</li>";
+		myApp.eventList += "<li>" + type + "</li>";
 	},
 	slidePageFrom: function (page, from) {
 		// Position the page at the starting position of the animation
